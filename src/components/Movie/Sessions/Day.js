@@ -2,15 +2,23 @@ import styled from "styled-components";
 
 export default function Day (props) {
     return (
-        <>
+        <DayWrapper>
             <Date>{props.weekday + " - " + props.date}</Date>
             <Sessions>
-                {props.showtimes.map((show) => <Session key={props.id}>{show.name}</Session>)}
+                {props.showtimes.map((show) => <li key={show.id}><Session>{show.name}</Session></li>)}
             </Sessions>
-        </>
+        </DayWrapper>
         
     );
 }
+
+const DayWrapper = styled.li`
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 25px;
+`;
 
 const Date = styled.p`
     font-size: 18px;
@@ -25,4 +33,6 @@ const Session = styled.button`
     height: 43px;
     background: #E8833A;
     border-radius: 3px;
+    border: none;
+    margin-right: 8px;
 `;

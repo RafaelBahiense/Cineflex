@@ -6,7 +6,7 @@ import {ContainerWrapper} from "../../Container";
 import TitleBox from "../TitleBox/TitleBox";
 import SessionsList from "./Sessions/SessionsList";
 
-export default function Movie (props) {
+export default function Movie () {
     const [movie, setMovie] = React.useState([]);
     const params = useParams();
 
@@ -15,14 +15,12 @@ export default function Movie (props) {
       request.then((movie) => {
         console.log(movie.data);  
         setMovie({...movie.data});})
-    }, [])  
-    if(movie.length === 0){
-        return (<p>Carregando</p>);
-    }
+    }, [params])  
+
     return (
-        <ContainerWrapper>
+        <ContainerWrapper size={"693px"}>
             <TitleBox title={"Selecione o horário"} />
-            <SessionsList days={movie.days}/>
+            {movie.length === 0 ? "Carregando" : <SessionsList days={movie.days} />}
         </ContainerWrapper>
     );
 }
