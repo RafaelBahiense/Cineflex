@@ -1,3 +1,5 @@
+import React, { useEffect } from "react";
+import axios from "axios";
 import styled from "styled-components";
 
 import TitleBox from "../TitleBox/TitleBox";
@@ -5,15 +7,18 @@ import {ContainerWrapper} from "../../Container";
 import Movie from "./Movie";
 
 export default function Catalog() {
+    const [moviesList, setMoviesList] = React.useState([]);
+
+    useEffect(() => {
+      const request =  axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/movies");
+      request.then((response) => setMoviesList([...response.data]))
+    }, [])  
+
     return (
         <ContainerWrapper>
-            <TitleBox />
+            <TitleBox title={"Selecione o filme"}/>
             <MoviesList>
-                <Movie/>
-                <Movie/>
-                <Movie/>
-                <Movie/>
-                <Movie/>
+                {moviesList.map((movie, key) => <Movie key={key} {...movie}/> )}
             </MoviesList>
         </ContainerWrapper>
     );

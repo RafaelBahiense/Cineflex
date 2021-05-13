@@ -1,20 +1,20 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export default function TitleBox () {
+export default function TitleBox (props) {
     return (
         <TitleBoxWrapper>
-            <Title>Selecione o filme</Title>
+            <Title>{props.title ? props.title : "text"}</Title>
         </TitleBoxWrapper>
     );
 }
-
+    
 const TitleBoxWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 102px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 102px;
 `;
 
 const Title = styled.h2`
-    font-size: 24px;
+font-size: 24px;
 `;

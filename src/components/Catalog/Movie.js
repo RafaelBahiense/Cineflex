@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export default function Movie () {
+export default function Movie (props) {
     return (
-        <MovieWrapper>
-            <Img src={"https://www.kinoplex.com.br/filmes/images/cartaz/262x388/godzilla-vs-kong.jpg"}/>
-        </MovieWrapper>
+        <Link to={`/filme/${props.id}`}>
+            <MovieWrapper>
+                <Img src={props.posterURL}/>
+            </MovieWrapper>
+        </Link>
     );
 }
 
