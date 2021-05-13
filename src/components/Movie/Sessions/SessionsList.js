@@ -4,7 +4,6 @@ import Footer from "../../Footer/Footer";
 import Day from "./Day";
 
 export default function SessionsList (props) { 
-    console.log(props);
     return (
         <>
             <SessionsListWrapper>

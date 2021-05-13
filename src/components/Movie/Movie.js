@@ -13,14 +13,13 @@ export default function Movie () {
     useEffect(() => {
       const request =  axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/movies/${params.idMovie}/showtimes`);
       request.then((movie) => {
-        console.log(movie.data);  
         setMovie({...movie.data});})
     }, [params])  
 
     return (
         <ContainerWrapper size={"693px"}>
             <TitleBox title={"Selecione o horário"} />
-            {movie.length === 0 ? "Carregando" : <SessionsList days={movie.days} />}
+            {movie.length === 0 ? "Carregando" : <SessionsList {...movie} />}
         </ContainerWrapper>
     );
 }

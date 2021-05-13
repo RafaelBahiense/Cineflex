@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 export default function Day (props) {
     return (
         <DayWrapper>
             <Date>{props.weekday + " - " + props.date}</Date>
             <Sessions>
-                {props.showtimes.map((show) => <li key={show.id}><Session>{show.name}</Session></li>)}
+                {props.showtimes.map((show) => <Link to={`/sessao/${show.id}`}><li key={show.id}><Session>{show.name}</Session></li></Link>)}
             </Sessions>
         </DayWrapper>
         

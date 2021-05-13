@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
+import TitleBox from "../TitleBox/TitleBox";
+
 export default function Footer (props) {
-    console.log(props);
     return (
         <FooterWrapper>
             <MoviePosterFrame>
                 <MoviePoster src={props.posterURL}/>
-                <p>{props.title}</p>
             </MoviePosterFrame>
+            <TitleBox title={props.title} size={"26px"}/>
         </FooterWrapper>
     );
 }
@@ -30,6 +31,7 @@ const MoviePosterFrame = styled.div`
     box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
     border-radius: 3px;
     background: #FFFFFF;
+    margin-right: 14px;
 `;
 
 const MoviePoster = styled.img`

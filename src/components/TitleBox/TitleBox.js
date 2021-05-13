@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default function TitleBox (props) {
     return (
         <TitleBoxWrapper>
-            <Title>{props.title ? props.title : "text"}</Title>
+            <Title size={props.size}>{props.title ? props.title : "text"}</Title>
         </TitleBoxWrapper>
     );
 }
@@ -16,5 +16,5 @@ height: 102px;
 `;
 
 const Title = styled.h2`
-font-size: 24px;
+font-size: ${props => props.size ? props.size : "24px"};
 `;
