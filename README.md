@@ -1,11 +1,11 @@
-# Foodcamp-React
+# Cineflex
 
-Projeto da oitava semana do bootcamp Responde Aí
+Projeto da nona semana do bootcamp Responde Aí
 
-Refatoração do aplicativo de entregas dos restaurante FoodCamp em React
-
-
-[Clique aqui](https://github.com/RafaelBahiense/Cineflex) para acessar o projeto
+Aplicativo para compra de ingressos em React
 
 
-![App screencap](https://github.com/RafaelBahiense/Cineflex)
+[Clique aqui](https://cineflex-psi.vercel.app/) para acessar o projeto
+
+
+![App screencap](https://github.com/RafaelBahiense/Cineflex/blob/main/src/Screenshot.png)
