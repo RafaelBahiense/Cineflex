@@ -3,7 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 
 import TitleBox from "../TitleBox/TitleBox";
-import {ContainerWrapper} from "../../Container";
+import ContainerWrapper from "../../Container";
 import Movie from "./Movie";
 
 export default function Catalog() {

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 
-import {ContainerWrapper} from "../../Container";
+import ContainerWrapper from "../../Container";
 import TitleBox from "../TitleBox/TitleBox";
 import SessionsList from "./Sessions/SessionsList";
 

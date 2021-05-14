@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Catalog from "./components/Catalog/Catalog";
 import Movie from "./components/Movie/Movie";
 import Seats from "./components/Seats/Seats";
+import Sucess from "./components/Sucess/Sucess";
 
 
 export default function App() {
@@ -21,6 +22,9 @@ export default function App() {
                 </Route>
                 <Route path="/sessao/:idSession" exact={true}>
                   <Seats />
+                </Route>
+                <Route path="/sucesso" exact={true}>
+                  <Sucess />
                 </Route>
             </Switch>
         </BrowserRouter>

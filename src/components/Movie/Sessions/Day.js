@@ -6,7 +6,7 @@ export default function Day (props) {
         <DayWrapper>
             <Date>{props.weekday + " - " + props.date}</Date>
             <Sessions>
-                {props.showtimes.map((show) => <Link to={`/sessao/${show.id}`}><li key={show.id}><Session>{show.name}</Session></li></Link>)}
+                {props.showtimes.map((show) => <li key={show.id}><Link to={`/sessao/${show.id}`}><Session>{show.name}</Session></Link></li> )}
             </Sessions>
         </DayWrapper>
         
