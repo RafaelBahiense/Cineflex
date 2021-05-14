@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 export default function Seat (props) {
@@ -14,12 +14,12 @@ export default function Seat (props) {
                     if(selected ) {
                         if(window.confirm(`Realmente gostaria de remover o assento ${props.name}`)) {
                             setSelected(false);
-                            props.buildBookSeatsObj(props.id, false);
+                            props.buildBookSeatsObj(props.id, false, props.name);
                         }
                     }
                     else {
                         setSelected(true);
-                        props.buildBookSeatsObj(props.id, true);
+                        props.buildBookSeatsObj(props.id, true, props.name);
                     }
                 }
                 else {

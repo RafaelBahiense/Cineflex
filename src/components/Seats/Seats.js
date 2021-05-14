@@ -18,13 +18,16 @@ export default function Seats () {
     useEffect(() => {
         const request =  axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/showtimes/${params.idSession}/seats`);
         request.then((response) => {
-        setSeats({...response.data})})
-      }, [params]) 
+            bookSeatsObj.title = response.data.movie.title;
+            bookSeatsObj.date = response.data.day.date;
+            bookSeatsObj.session = response.data.name;
+            setSeats({...response.data})})
+      }, [params, bookSeatsObj]) 
 
-    function buildBookSeatsObj (id,add) {
+    function buildBookSeatsObj (id,add, assento) {
         if (add) {
             bookSeatsObj.ids.push(id);
-            bookSeatsObj.compradores.push({idAssento : id, nome: "", cpf: ""});
+            bookSeatsObj.compradores.push({idAssento : id, nome: "", cpf: "", assento : assento});
         }
         else {
             bookSeatsObj.ids = bookSeatsObj.ids.filter((arrayId) => arrayId !== id);
@@ -134,4 +137,6 @@ const BookSeats = styled.button`
     border: none;
     background: #E8833A;
     border-radius: 3px;
+    color: #FFFFFF;
+    font-size: 18px;
 `;

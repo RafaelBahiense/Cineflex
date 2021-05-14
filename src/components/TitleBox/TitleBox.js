@@ -9,12 +9,13 @@ export default function TitleBox (props) {
 }
     
 const TitleBoxWrapper = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-height: 102px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 102px;
 `;
 
 const Title = styled.h2`
-font-size: ${props => props.size ? props.size : "24px"};
+    font-size: ${props => props.size ? props.size : "24px"};
+    color: ${props => props.color ? props.color : "#293845"};
 `;
